@@ -51,7 +51,7 @@ export interface Image3 {
   webp: string;
 }
 
-export const Data: Root[] = [
+export const Data: Array<Root> = [
   {
     currentUser: {
       image: {
