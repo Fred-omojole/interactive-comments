@@ -1,3 +1,4 @@
+"use client"
 import { ModeToggle } from "./modeToggle";
 
 const Navbar = () => {
