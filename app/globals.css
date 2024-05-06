@@ -1,36 +1,38 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
 
-  .moderateBlue {
-    color : hsl(238, 40%, 52%)
-  }
+body {
+  background-color: hsl(223, 19%, 93%);
+}
 
-  .softRed{
-    color:hsl(358, 79%, 66%)
-  }
+.moderateBlue {
+  background-color: hsl(238, 40%, 52%);
+}
 
-  .LightGrayishBlue{
-    color: hsl(239, 57%, 85%)
-  }
+.softRed {
+  color: hsl(358, 79%, 66%);
+}
 
-  .paleRed{
-    color: hsl(357, 100%, 86%)
-  }
+.LightGrayishBlue {
+  color: hsl(239, 57%, 85%);
+}
 
+.paleRed {
+  color: hsl(357, 100%, 86%);
+}
 
-  .darkblue{
-    color:hsl(212, 24%, 26%)
-  }
-  .lightGray{
-    color: hsl(223, 19%, 93%)
-  }
+.darkblue {
+  color: hsl(212, 24%, 26%);
+}
+.lightGray {
+  color: hsl(223, 19%, 93%);
+}
 
-  .veryLightGray{
-    color: hsl(228, 33%, 97%)
-  }
+.veryLightGray {
+  color: hsl(228, 33%, 97%);
+}
 
-  .white{
-    color: hsl(0, 0%, 100%)
-  }
+.white {
+  color: hsl(0, 0%, 100%);
+}

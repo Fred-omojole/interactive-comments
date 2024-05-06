@@ -51,12 +51,12 @@ export interface Image3 {
   webp: string;
 }
 
-export const Data: Array<Root> = [
+export const Data: Root = 
   {
     currentUser: {
       image: {
-        png: "./images/avatars/image-juliusomo.png",
-        webp: "./images/avatars/image-juliusomo.webp",
+        png: "/images/avatars/image-juliusomo.png",
+        webp: "/images/avatars/image-juliusomo.webp",
       },
       username: "juliusomo",
     },
@@ -69,8 +69,8 @@ export const Data: Array<Root> = [
         score: 12,
         user: {
           image: {
-            png: "./images/avatars/image-amyrobson.png",
-            webp: "./images/avatars/image-amyrobson.webp",
+            png: "/images/avatars/image-amyrobson.png",
+            webp: "/images/avatars/image-amyrobson.webp",
           },
           username: "amyrobson",
         },
@@ -84,8 +84,8 @@ export const Data: Array<Root> = [
         score: 5,
         user: {
           image: {
-            png: "./images/avatars/image-maxblagun.png",
-            webp: "./images/avatars/image-maxblagun.webp",
+            png: "/images/avatars/image-maxblagun.png",
+            webp: "/images/avatars/image-maxblagun.webp",
           },
           username: "maxblagun",
         },
@@ -99,8 +99,8 @@ export const Data: Array<Root> = [
             replyingTo: "maxblagun",
             user: {
               image: {
-                png: "./images/avatars/image-ramsesmiron.png",
-                webp: "./images/avatars/image-ramsesmiron.webp",
+                png: "/images/avatars/image-ramsesmiron.png",
+                webp: "/images/avatars/image-ramsesmiron.webp",
               },
               username: "ramsesmiron",
             },
@@ -114,8 +114,8 @@ export const Data: Array<Root> = [
             replyingTo: "ramsesmiron",
             user: {
               image: {
-                png: "./images/avatars/image-juliusomo.png",
-                webp: "./images/avatars/image-juliusomo.webp",
+                png: "/images/avatars/image-juliusomo.png",
+                webp: "/images/avatars/image-juliusomo.webp",
               },
               username: "juliusomo",
             },
@@ -123,5 +123,5 @@ export const Data: Array<Root> = [
         ],
       },
     ],
-  },
-];
+  };
+
