@@ -8,12 +8,12 @@ const Replyy = () => {
 
   return (
     <>
-      
-      <button className="flex gap-1 items-center justify-center blue ">
-        <FaReply className="" />
-        <span className="grid">Reply</span>
-      </button>
-   
+      <div className="space-x-4">
+        <button className=" flex gap-1 items-center justify-center blue  ">
+          <FaReply className="" />
+          <span className="font-medium">Reply</span>
+        </button>
+      </div>
     </>
   );
 };

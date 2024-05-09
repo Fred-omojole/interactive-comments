@@ -33,7 +33,7 @@ const Comments = () => {
         <div key={commentIndex}>
           <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
             <div className="">
-              <div className="flex gap-3 items-center mb-4 font-medium">
+              <div className="flex gap-3  items-center mb-4 font-medium">
                 <Image
                   src={comment.user.image.png}
                   width={50}
@@ -52,16 +52,18 @@ const Comments = () => {
                 <p className="capitalize ">{comment.user.username}</p>
                 <p className="tracking-tighter">{comment.createdAt}</p>
 
-                <div className="hidden lg:block ">
-                  <Replyy  />
-                </div>
+                {/* <div className="   "> */}
+                  <div className="hidden lg:ml-auto lg:grid  lg:place-content-end ">
+                    <Replyy />
+                  </div>
+                {/* </div> */}
               </div>
 
               <p className="p-6 font-medium mb-4">{comment.content}</p>
 
-              <div className="lg:hidden grid place-content-end">
-                  <Replyy  />
-                </div>
+              <div className="lg:hidden grid place-content-end ">
+                <Replyy />
+              </div>
             </div>
           </div>
         </div>
