@@ -31,7 +31,7 @@ const Comments = () => {
     <div className="">
       {comment.map((comment: Comment, commentIndex) => (
         <div key={commentIndex}>
-          <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
+          <div className="p-3 mt-5 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
             <div className="">
               <div className="flex gap-3  items-center mb-4 font-medium">
                 <Image
@@ -50,7 +50,9 @@ const Comments = () => {
                 />
 
                 <p className="capitalize ">{comment.user.username}</p>
-                <p className="tracking-tighter text-gray-500">{comment.createdAt}</p>
+                <p className="tracking-tighter text-gray-500">
+                  {comment.createdAt}
+                </p>
 
                 {/* <div className="   "> */}
                 <div className="hidden lg:ml-auto lg:grid   lg:place-content-end ">
@@ -59,17 +61,61 @@ const Comments = () => {
                 {/* </div> */}
               </div>
 
-              <p className="p-6  mb-4 text-gray-500">
-                {comment.content}
-              </p>
+              <p className="p-6  mb-4 text-gray-500">{comment.content}</p>
 
               <div className="lg:hidden grid place-content-end ">
                 <Replyy />
               </div>
             </div>
           </div>
+
+          {comment.replies.map((reply: Reply, replyIndex) => (
+            <div key={replyIndex}>
+              <div className="p-3 mt-5 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
+                <div className="">
+                  <div className="flex gap-3  items-center mb-4 font-medium">
+                    <Image
+                      src={reply.user.image.png}
+                      width={50}
+                      alt="user image"
+                      height={50}
+                      className="lg:hidden mb-4 lg:m-auto items-center"
+                    />
+                    <Image
+                      src={reply.user.image.png}
+                      width={50}
+                      alt="user image"
+                      height={50}
+                      className="hidden lg:block items-center"
+                    />
+
+                    <p className="capitalize ">{reply.user.username}</p>
+                    <p className="tracking-tighter text-gray-500">
+                      {comment.createdAt}
+                    </p>
+
+                    {/* <div className="   "> */}
+                    <div className="hidden lg:ml-auto lg:grid   lg:place-content-end ">
+                      <Replyy />
+                    </div>
+                    {/* </div> */}
+                  </div>
+
+                  <p className="p-6  mb-4 text-gray-500">{reply.content}</p>
+
+                  <div className="lg:hidden grid place-content-end ">
+                    <Replyy />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       ))}
+
+      {/* <div className=" mt-2 border-[2px] border-gray-400 fixed w-full rotate-90 overflow-hidden -z-10"> */}
+
+      {/* </div> */}
 
       <div className="p-3 mt-5 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
         <div className=" lg:h-36">
