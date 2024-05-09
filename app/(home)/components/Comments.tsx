@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Data, Comment, Reply, CurrentUser } from "@/lib/Definition";
 import Image from "next/image";
+
+import Replyy from "./Replyy";
 
 const Comments = () => {
   const [comment, setComment] = useState(Data.comments);
@@ -26,75 +28,49 @@ const Comments = () => {
   };
 
   return (
-    <>
-      <div className="mt-10 lg:w-2/4 bg-[hsl(228,33%,97%)] rounded-md">
-        <div className="flex flex-row gap-4 p-6 mx-auto ">
-          <div>
-            <Image
-              src={Data.currentUser.image.png}
-              alt="image"
-              width={50}
-              height={50}
-            />
-          </div>
+    <div className="">
+     
+     <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
+     <div className=" lg:h-36">
+        <Image
+        className="lg:hidden mb-4 lg:m-auto"
+          src={Data.currentUser.image.png}
+          alt="current user "
+          width={50}
+          height={50}
+        />
 
-          {/* INPUT AREA FOR CURRENT USER COMMENT  */}
-          <div>
-            <label className="">
-              <textarea
-                value={commentBody}
-                onChange={(e) => setCommentBody(e.target.value)}
-                placeholder="Add Comment..."
-                className="border-[1px]  md:w-96 p-2 text-gray-500  bg-[hsl(228,33%,97%)] rounded-md h-24"
-              />
-            </label>{" "}
-          </div>
-          {/* SEND BUTTON FOR CURRENT USER COMMENTS */}
-          <div>
-            <button
-              onClick={() => handleComment()}
-              className="moderateBlue lg:mt-2 text-white rounded-md border-none px-6 h-10"
-            >
-              Send
-            </button>
-          </div>
-        </div>
+<Image
+        className="hidden lg:block"
+          src={Data.currentUser.image.png}
+          alt="current user "
+          width={80}
+          height={60}
+        />
+
+
       </div>
 
-      <div className="mt-10">
-        {comment.map((comment, commentIndex) => (
-          <div className="my-11 " key={commentIndex}>
-            <div className="  w-auto lg:w-1/2 border-[1px]  p-4 h-auto bg-[hsl(228,33%,97%)] rounded-md ">
-              <div className=" ">
-                <div className="flex items-center gap-3 ">
-                  <Image
-                    src={comment.user.image.png}
-                    alt="image"
-                    width={50}
-                    height={50}
-                  />
-                  <h3 className="capitalize">{comment.user.username}</h3>
-                  <p className="text-gray-500">{comment.createdAt}</p>
+      <label className="w-[1024px] ">
+        {" "}
+        <textarea
+          className="w-full p-6 mb-2 h-full bg-[hsl(228,33%,97%)]"
+          placeholder="Add Comments..."
+          value={commentBody}
+          onChange={(e) => setCommentBody(e.target.value)}
+        ></textarea>
+      </label>
 
-                  <div className="md:relative md:left-72 lg:left-60">
-                    <button className="   moderateBlue text-white rounded-md border-none px-6 h-10">
-                      Reply
-                    </button>
-                  </div>
-                </div>
-
-                {/* REPLY BUTTON */}
-                {/* <div className=" flex  mt-4"> */}
-
-                {/* </div> */}
-
-                <div className="mt-4 text-gray-500 ">{comment.content}</div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="p-2 grid place-content-end lg:flex lg:items-start mt-2 mb-4 ">
+        <button onClick={()=> {handleComment()}} className="relative capitalize font-semibold text-white rounded-md moderateBlue  px-6 py-2 lg:px-4 lg:py-2   ">
+          send
+        </button>
       </div>
-    </>
+
+
+     </div>
+
+    </div>
   );
 };
 

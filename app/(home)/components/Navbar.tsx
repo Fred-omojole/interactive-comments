@@ -4,7 +4,7 @@ import { ModeToggle } from "./modeToggle";
 const Navbar = () => {
   return (
     <nav className="">
-      <ModeToggle />
+    <ModeToggle />
     </nav>
   );
 };
