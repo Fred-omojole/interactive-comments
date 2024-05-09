@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Data, Comment, Reply, CurrentUser } from "@/lib/Definition";
+import { Data, Comment, Reply } from "@/lib/Definition";
 import Image from "next/image";
 
 import Replyy from "./Replyy";
@@ -29,6 +29,44 @@ const Comments = () => {
 
   return (
     <div className="">
+      {comment.map((comment: Comment, commentIndex) => (
+        <div key={commentIndex}>
+          <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
+            <div className="">
+              <div className="flex gap-3 items-center mb-4 font-medium">
+                <Image
+                  src={comment.user.image.png}
+                  width={50}
+                  alt="user image"
+                  height={50}
+                  className="lg:hidden mb-4 lg:m-auto items-center"
+                />
+                <Image
+                  src={comment.user.image.png}
+                  width={50}
+                  alt="user image"
+                  height={50}
+                  className="hidden lg:block items-center"
+                />
+
+                <p className="capitalize ">{comment.user.username}</p>
+                <p className="tracking-tighter">{comment.createdAt}</p>
+
+                <div className="hidden lg:block ">
+                  <Replyy  />
+                </div>
+              </div>
+
+              <p className="p-6 font-medium mb-4">{comment.content}</p>
+
+              <div className="lg:hidden grid place-content-end">
+                  <Replyy  />
+                </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
       <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
         <div className=" lg:h-36">
           <Image

@@ -9,9 +9,9 @@ const Replyy = () => {
   return (
     <>
       
-      <button className=" p-6 blue flex justify-center items-center gap-2">
-        <FaReply />
-        <span className="">Reply</span>
+      <button className="flex gap-1 items-center justify-center blue ">
+        <FaReply className="" />
+        <span className="grid">Reply</span>
       </button>
    
     </>
