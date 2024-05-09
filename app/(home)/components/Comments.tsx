@@ -23,7 +23,7 @@ const Comments = () => {
       },
       replies: [],
     };
-    setComment((prev) => [newComment, ...prev]);
+    setComment((prev) => [...prev, newComment]);
     setCommentBody("");
   };
 
@@ -50,16 +50,18 @@ const Comments = () => {
                 />
 
                 <p className="capitalize ">{comment.user.username}</p>
-                <p className="tracking-tighter">{comment.createdAt}</p>
+                <p className="tracking-tighter text-gray-500">{comment.createdAt}</p>
 
                 {/* <div className="   "> */}
-                  <div className="hidden lg:ml-auto lg:grid  lg:place-content-end ">
-                    <Replyy />
-                  </div>
+                <div className="hidden lg:ml-auto lg:grid   lg:place-content-end ">
+                  <Replyy />
+                </div>
                 {/* </div> */}
               </div>
 
-              <p className="p-6 font-medium mb-4">{comment.content}</p>
+              <p className="p-6  mb-4 text-gray-500">
+                {comment.content}
+              </p>
 
               <div className="lg:hidden grid place-content-end ">
                 <Replyy />
@@ -69,12 +71,12 @@ const Comments = () => {
         </div>
       ))}
 
-      <div className="p-3 mt-10 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
+      <div className="p-3 mt-5 bg-[hsl(228,33%,97%)] rounded-md lg:flex lg:gap-2 lg:w-3/4 lg:p-4">
         <div className=" lg:h-36">
           <Image
             className="lg:hidden mb-4 lg:m-auto"
             src={Data.currentUser.image.png}
-            alt="current user "
+            alt="current user"
             width={50}
             height={50}
           />
@@ -91,7 +93,7 @@ const Comments = () => {
         <label className="w-[1024px] ">
           {" "}
           <textarea
-            className="w-full p-6 mb-2 h-full bg-[hsl(228,33%,97%)]"
+            className="w-full p-6 mb-2 text-gray-500 h-full bg-[hsl(228,33%,97%)]"
             placeholder="Add Comments..."
             value={commentBody}
             onChange={(e) => setCommentBody(e.target.value)}
